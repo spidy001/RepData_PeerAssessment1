@@ -1,4 +1,9 @@
-# Reproducible Research: Peer Assessment 1
+---
+title: "Reproducible Research: Peer Assessment 1"
+output: 
+  html_document:
+    keep_md: true
+---
 ## Loading and preprocessing the data
 extracting the activity zip file and reading the  file contents 
 
@@ -29,7 +34,7 @@ stepsTakenPerDay<-as.numeric(noOfStepsPerDay)
 hist(stepsTakenPerDay)
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-4-1.png) 
+![plot of chunk unnamed-chunk-4](figure/unnamed-chunk-4-1.png) 
 
 3.Calculating mean and median
 
@@ -62,7 +67,7 @@ df<-as.data.frame(m<-cbind(stepsInterval,steps))
 plot(stepsInterval,steps)
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-6-1.png) 
+![plot of chunk unnamed-chunk-6](figure/unnamed-chunk-6-1.png) 
 
 2.The 5-minute interval that contains the maximum number of steps on average 
 across all the days in the dataset
@@ -145,7 +150,7 @@ stepsTakenPerDay<-as.numeric(noOfStepsPerDay)
 hist(stepsTakenPerDay)
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-14-1.png) 
+![plot of chunk unnamed-chunk-14](figure/unnamed-chunk-14-1.png) 
 
 Mean , Median calculation
 
@@ -180,17 +185,10 @@ and the average number of steps
 
 ```r
 library(lattice)
-```
-
-```
-## Warning: package 'lattice' was built under R version 3.1.3
-```
-
-```r
 par(mfrow=c(2,1))
 plot <- xyplot(steps~interval|day,data = cleanActivityData,xlab = "Interval",
                ylab = "Number of steps",type = "l",layout = c(1,2))
 print(plot)
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-17-1.png) 
+![plot of chunk unnamed-chunk-17](figure/unnamed-chunk-17-1.png) 
